@@ -1,0 +1,19 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: block !important; /* Forces layout to be normal, not centered */
+  width: 100%;
+  min-width: 100vw;
+  background-color: white;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
