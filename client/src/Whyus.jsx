@@ -25,7 +25,6 @@ const Whyus = () => {
       <section className="page-banner">
         <div className="banner-content">
           <h1>WHY US</h1>
-          <p>Reinventing NZ Workplaces through tailored recruitment solutions.</p>
         </div>
       </section>
 
@@ -34,19 +33,13 @@ const Whyus = () => {
           <h2>Service Features & Benefits</h2>
           <p className="intro-text">
             At Fast Force, there are various service features and benefits designed to assist our clients easing the challenges of hiring. 
-            Most of the services’ features are custom designed and benefits are explained as per the client needs after a thorough consultation. 
-            Our consultants are not "one size fits all" thinkers. We can assure that you will be guided and provided with the desired outcome in a timely manner.
-          </p>
-          <p className="intro-subtext">
-            All the services at any level are carefully designed while keeping <strong>QUALITY</strong> in mind. 
-            Below is the overview of some Features and Benefits but not limited to:
           </p>
         </div>
       </section>
 
       <section className="table-section">
-        <div className="table-container">
-          <table className="benefits-table">
+        <div className="small-table-wrapper">
+          <table className="benefits-table compact">
             <thead>
               <tr>
                 <th>Features</th>

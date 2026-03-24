@@ -7,7 +7,7 @@ body {
   font-family: 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
+  overflow-x: hidden; 
 }
 
 /* --- Header Section --- */
@@ -15,6 +15,7 @@ body {
   width: 100%; 
   background: #fff; 
   position: relative;
+  z-index: 1000;
 }
 
 .header-container {
@@ -28,6 +29,7 @@ body {
 
 .logo {
   margin-left: 50px; 
+  cursor: pointer;
 }
 
 .header-logo-img { 
@@ -37,7 +39,7 @@ body {
 }
 
 .mobile-menu-icon {
-  display: none; /* Hidden on desktop */
+  display: none; 
   font-size: 24px;
   background: none;
   border: none;
@@ -49,24 +51,128 @@ body {
   display: flex; 
   gap: 22px; 
   margin-right: 40px; 
+  align-items: center;
 }
 
-.nav-menu a {
+.nav-menu a, .dropdown-trigger {
   text-decoration: none;
   color: #1a435d;
   font-weight: 700;
   font-size: 13px;
   text-transform: uppercase;
   transition: color 0.3s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 10px 0;
 }
 
-.nav-menu a:hover, .nav-menu a.active { color: #7aba2e; }
+.nav-menu a:hover, .nav-menu a.active, .dropdown-trigger:hover, .dropdown-trigger.active { 
+  color: #7aba2e; 
+}
+
+/* --- Employers Dropdown Styles --- */
+.nav-item-dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid #7aba2e;
+  z-index: 1100;
+}
+
+.dropdown-content a {
+  color: #1a435d !important;
+  padding: 12px 15px;
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: none !important; /* Makes 'Why Us' look natural */
+  border-bottom: 1px solid #f2f2f2;
+  font-weight: 400 !important;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f9f9f9;
+  color: #7aba2e !important;
+}
 
 .header-blue-bar { 
   height: 35px; 
   background-color: #1a435d; 
   width: 100%; 
 }
+
+/* --- Core Services Specialty Rows --- */
+.page-banner { 
+  background-color: #1a435d; 
+  color: white; 
+  padding: 60px 20px; 
+  text-align: center; 
+}
+
+.specialties-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.specialty-row {
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 80px auto;
+  gap: 50px;
+  padding: 0 20px;
+}
+
+.specialty-row.reverse { flex-direction: row-reverse; }
+
+.specialty-text { flex: 1; }
+.specialty-text h2 { color: #1a435d; font-size: 22px; font-weight: 800; margin-bottom: 15px; }
+.specialty-text p { color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 25px; }
+
+.specialty-image { flex: 1; }
+.specialty-image img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+.learn-more-btn {
+  background-color: #1a435d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.learn-more-btn:hover { background-color: #7aba2e; }
+
+/* --- Why Us Compact Table --- */
+.container-narrow { max-width: 900px; margin: 40px auto; text-align: center; padding: 0 20px; }
+.small-table-wrapper { max-width: 1000px; margin: 0 auto 50px auto; padding: 0 15px; overflow-x: auto; }
+
+.benefits-table.compact {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  background-color: #fff;
+}
+
+.benefits-table.compact th { background-color: #1a435d; color: #fff; padding: 10px; text-align: left; }
+.benefits-table.compact td { padding: 8px 10px; border: 1px solid #eee; color: #444; }
+.feat-cell { font-weight: 700; color: #1a435d !important; width: 22%; background-color: #fbfbfb; }
 
 /* --- Main Footer Grid --- */
 .main-footer {
@@ -169,7 +275,6 @@ body {
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
 
-/* Tablets (1024px and below) */
 @media (max-width: 1024px) {
   .logo, .nav-menu, .copyright-info, .sub-footer-links {
     margin-left: 0;
@@ -182,13 +287,10 @@ body {
   .header-container { padding: 15px 30px; }
 }
 
-/* Mobile Phones (768px and below) */
 @media (max-width: 768px) {
   .mobile-menu-icon { display: block; }
-
-  /* Mobile Nav Drawer */
   .nav-menu {
-    display: none; /* Set state logic in JS to toggle class 'nav-active' */
+    display: none; 
     flex-direction: column;
     position: absolute;
     top: 100px; left: 0; width: 100%;
@@ -196,21 +298,11 @@ body {
     box-shadow: 0 10px 15px rgba(0,0,0,0.1);
     z-index: 100;
   }
-  
   .nav-menu.nav-active { display: flex; }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
+  .dropdown-content { position: static; box-shadow: none; border: none; padding-left: 20px; }
+  .specialty-row, .specialty-row.reverse { flex-direction: column; text-align: center; gap: 30px; }
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
   .footer-col h3 { margin: 0 auto 20px auto; }
-
-  .sub-footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-
+  .sub-footer-container { flex-direction: column; text-align: center; gap: 15px; }
   .scroll-top-btn { right: 20px; width: 40px; height: 40px; }
 }
