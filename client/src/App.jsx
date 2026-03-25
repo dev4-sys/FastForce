@@ -11,6 +11,8 @@ import TemporaryTerms from './TemporaryTerms.jsx';
 import Register from './Register.jsx';
 import AboutUs from './AboutUs.jsx';
 import CoreValues from './CoreValues.jsx';
+import CorporateProfile from './CorporateProfile.jsx';
+import Contact from './Contact.jsx'; // 1. Added Contact Import
 
 // Import Images
 import logo from './fast-force-logo.png'; 
@@ -91,13 +93,12 @@ function App() {
 
             <a href="#">CANDIDATES</a>
 
-            {/* WHO ARE WE DROPDOWN - ORDER: About -> Values -> Services */}
             <div 
               className="nav-item-dropdown"
               onMouseEnter={() => setIsAboutDropdownOpen(true)}
               onMouseLeave={() => setIsAboutDropdownOpen(false)}
             >
-              <button className={`dropdown-trigger ${['about', 'values', 'coreservices'].includes(currentPage) ? 'active' : ''}`}>
+              <button className={`dropdown-trigger ${['about', 'values', 'coreservices', 'corporate'].includes(currentPage) ? 'active' : ''}`}>
                 WHO ARE WE <i className="fas fa-caret-down"></i>
               </button>
               
@@ -106,6 +107,7 @@ function App() {
                   <a href="#" onClick={() => navigateTo('about')}>About Us</a>
                   <a href="#" onClick={() => navigateTo('values')}>Core Values</a>
                   <a href="#" onClick={() => navigateTo('coreservices')}>Core Services</a>
+                  <a href="#" onClick={() => navigateTo('corporate')}>Corporate Profile</a>
                 </div>
               )}
             </div>
@@ -119,7 +121,15 @@ function App() {
             </a>
 
             <a href="#">H&S TRAINING</a>
-            <a href="#">CONTACT</a>
+            
+            {/* 2. Linked Contact Nav Item */}
+            <a 
+              href="#" 
+              onClick={() => navigateTo('contact')}
+              className={currentPage === 'contact' ? 'active' : ''}
+            >
+              CONTACT
+            </a>
           </nav>
         </div>
         <div className="header-blue-bar"></div>
@@ -142,6 +152,8 @@ function App() {
         {currentPage === 'register' && <Register />}
         {currentPage === 'about' && <AboutUs />}
         {currentPage === 'values' && <CoreValues />} 
+        {currentPage === 'corporate' && <CorporateProfile />}
+        {currentPage === 'contact' && <Contact />} {/* 3. Added Render Logic */}
       </main>
 
       {/* --- FOOTER --- */}
@@ -175,14 +187,16 @@ function App() {
               <li onClick={() => navigateTo('termsPerm')}>Permanent Terms</li>
               <li onClick={() => navigateTo('termsTemp')}>Temporary Terms</li>
               <li onClick={() => navigateTo('register')}>Register</li>
+              <li onClick={() => navigateTo('corporate')}>Corporate Profile</li>
+              <li onClick={() => navigateTo('contact')}>Contact</li>
             </ul>
           </div>
 
           <div className="footer-col contact-col">
             <h3>CONTACT</h3>
-            <div className="office-info"><p><strong>Christchurch Office</strong><br/>Phone: 03 3350223</p></div>
-            <div className="office-info"><p><strong>Ashburton Office</strong><br/>Phone: 02 25282386</p></div>
-            <div className="office-info"><p><strong>Dunedin Office</strong><br/>Phone: 02 12788917</p></div>
+            <div className="office-info" onClick={() => navigateTo('contact')} style={{cursor:'pointer'}}><p><strong>Christchurch Office</strong><br/>Phone: 03 3350223</p></div>
+            <div className="office-info" onClick={() => navigateTo('contact')} style={{cursor:'pointer'}}><p><strong>Ashburton Office</strong><br/>Phone: 02 25282386</p></div>
+            <div className="office-info" onClick={() => navigateTo('contact')} style={{cursor:'pointer'}}><p><strong>Dunedin Office</strong><br/>Phone: 02 12788917</p></div>
           </div>
         </div>
       </footer>

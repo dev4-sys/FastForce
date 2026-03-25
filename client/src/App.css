@@ -612,3 +612,379 @@ body {
     font-size: 22px !important;
   }
 }
+/* ============================================================
+   CORPORATE PROFILE PAGE STYLES
+   ============================================================ */
+
+/* Main Page Container */
+.corporate-profile-page {
+  background-color: #ffffff;
+}
+
+/* Banner Section (Matching your image) */
+.corporate-banner {
+  background-color: #1a435d; /* FastForce Navy Blue */
+  padding: 60px 20px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+.corporate-banner-title {
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* Download Button Styling */
+.download-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.corporate-download-btn {
+  background-color: #1a435d;
+  color: #ffffff;
+  padding: 18px 40px;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.corporate-download-btn:hover {
+  background-color: #7aba2e; /* FastForce Green on Hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(122, 186, 46, 0.3);
+}
+
+.corporate-download-btn i {
+  font-size: 20px;
+}
+
+/* Slider / Carousel Container */
+.profile-slider-container {
+  max-width: 700px;
+  margin: 0 auto 80px auto;
+  padding: 0 20px;
+}
+
+.profile-slider-wrapper {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for a cleaner look, or style it */
+.profile-slider-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.profile-slider-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.profile-slider-wrapper::-webkit-scrollbar-thumb {
+  background: #1a435d;
+  border-radius: 10px;
+}
+
+.profile-slide {
+  flex: 0 0 100%; /* Show one image at a time */
+  scroll-snap-align: start;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.profile-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Instruction Text */
+.slider-instruction {
+  text-align: center;
+  margin-top: 20px;
+  color: #888;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Mobile Adjustments */
+@media (max-width: 768px) {
+  .corporate-banner-title {
+    font-size: 28px;
+  }
+  
+  .corporate-download-btn {
+    width: 90%;
+    justify-content: center;
+    padding: 15px 20px;
+  }
+}
+/* ============================================================
+   CONTACT PAGE STYLES (SINGLE BLOCK)
+   ============================================================ */
+
+/* 1. Hero Banner */
+.contact-hero-banner {
+  background: linear-gradient(rgba(26, 67, 93, 0.7), rgba(26, 67, 93, 0.7)), 
+              url('./contact-banner-bg.jpg'); /* Ensure this image exists in your folder */
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner-title {
+  color: #ffffff;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+/* 2. Main Content & Form Layout */
+.contact-main-content {
+  max-width: 1100px;
+  margin: -50px auto 60px; /* Overlaps banner slightly */
+  padding: 0 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.contact-container-flex {
+  display: flex;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  overflow: hidden;
+  align-items: stretch;
+}
+
+.contact-form-wrapper {
+  flex: 1.2;
+  padding: 50px;
+}
+
+.contact-ui-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-ui-form input, 
+.contact-ui-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #e0e0e0;
+  background-color: #fdfdfd;
+  font-size: 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.contact-ui-form input:focus, 
+.contact-ui-form textarea:focus {
+  outline: none;
+  border-color: #1a435d;
+  box-shadow: 0 0 0 3px rgba(26, 67, 93, 0.1);
+}
+
+.contact-submit-btn {
+  background-color: #1a435d;
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-submit-btn:hover {
+  background-color: #7aba2e; /* FastForce Green */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(122, 186, 46, 0.3);
+}
+
+/* 3. Right Side Visual (Triangle Logo) */
+.contact-visual {
+  flex: 0.8;
+  background-color: #f4f7f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.triangle-graphic {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.blue-part {
+  width: 0; height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 120px solid #1a435d;
+}
+
+.green-part {
+  width: 0; height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-bottom: 80px solid #7aba2e;
+  position: absolute;
+  top: 40px;
+  left: 25px;
+}
+
+/* 4. Horizontal Maps Section */
+.maps-section-wrapper {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.maps-horizontal-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.map-card {
+  flex: 1;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.map-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(26, 67, 93, 0.15);
+}
+
+.map-label {
+  background-color: #1a435d;
+  color: white;
+  padding: 14px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.map-box iframe {
+  display: block;
+  filter: grayscale(10%);
+  transition: 0.3s;
+}
+
+.map-card:hover iframe {
+  filter: grayscale(0%);
+}
+
+/* 5. Responsive Styles */
+@media (max-width: 992px) {
+  .contact-container-flex {
+    flex-direction: column;
+  }
+  .contact-visual {
+    padding: 50px 0;
+  }
+  .maps-horizontal-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .map-card {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form-wrapper {
+    padding: 30px 20px;
+  }
+  .banner-title {
+    font-size: 32px;
+  }
+}
+/* Office Details Styles */
+.office-details-wrapper {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+}
+
+.office-details-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.office-info-card {
+  flex: 1;
+  padding: 20px;
+}
+
+.office-info-card h3 {
+  color: #1a435d; /* Brand Navy */
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #7aba2e; /* Brand Green accent */
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.office-info-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.office-info-card strong {
+  color: #1a435d;
+}
+
+/* Responsive fix */
+@media (max-width: 900px) {
+  .office-details-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+  .office-info-card h3 {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 15px;
+  }
+}
