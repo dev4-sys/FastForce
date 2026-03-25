@@ -5,20 +5,32 @@ const Coreservices = () => {
     {
       title: "OUR SPECIALITY IN TRADES/CONSTRUCTION",
       desc: "We have a wide talent pool in construction and trades, offering skilled candidates ranging from painters to engineers.",
-      img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500",
+      img: "/builder.jpg",
       align: "right"
     },
     {
       title: "OUR SPECIALITY IN WAREHOUSING & DRIVERS",
       desc: "We supply workers for roles ranging from Pick/Packers to Class 5 drivers and everything in between.",
-      img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500",
+      img: "/warehouse-c.jpg",
       align: "left"
     },
     {
         title: "OUR SPECIALITY IN FARMING",
         desc: "Looking for a Dairy Farmworker, Harvesters, farm hand or machine operator? Look no further!",
-        img: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=500",
+        img: "/iStock-961141132.jpg",
         align: "right"
+    },
+    {
+      title: "OUR SPECIALITY IN RELIEF DRIVER SERVICES",
+      desc: "We supply verified drivers with class 1,2,4 and 5 for long and short-term assignments to keep you moving.",
+      img: "/relief-driver.jpg",
+      align: "left"
+    },
+    {
+      title: "OUR SPECIALITY IN HEALTH CARE",
+      desc: "We have Registered Nurses and Caregivers available to assist you for short and long term care. We have a pool of competent candidates who are ready to provide exceptional care.",
+      img: "/Health-Care-Nurse.jpg",
+      align: "right"
     }
   ];
 
