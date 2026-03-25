@@ -58,15 +58,24 @@ const HiringProcess = () => {
         </section>
       </div>
 
-      {/* Step 3: Hunt Tailored */}
+      {/* Step 3: Hunt Tailored & Infographic */}
       <section className="specialties-section">
-        <div className="specialty-row">
-          <div className="specialty-text" style={{ flex: '2' }}>
+        <div className="specialty-row" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+          <div className="specialty-text" style={{ flex: '1', width: '100%' }}>
             <h2 className="navy-heading" style={{ textAlign: 'left' }}>HUNT TAILORED TO THE JOB</h2>
             <p>
               After initial process, our consultant will visit your premises to get to know you and the 
               business requirements better. Once we have all we need to run a talent search for the client, we...
             </p>
+          </div>
+          
+          {/* Added Infographic Image Below the Text */}
+          <div className="specialty-image" style={{ width: '100%', marginTop: '30px', textAlign: 'center' }}>
+            <img 
+              src="/work-process-1024x503.jpg" 
+              alt="Hiring Process Infographic" 
+              style={{ maxWidth: '900px', boxShadow: 'none' }} 
+            />
           </div>
         </div>
       </section>
