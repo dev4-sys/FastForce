@@ -14,7 +14,7 @@ body {
 .main-header { 
   width: 100%; 
   background: #fff; 
-  position: relative;
+  position: relative; 
   z-index: 1000;
 }
 
@@ -113,8 +113,12 @@ body {
 }
 
 /* --- Shared Page Layouts & Hiring Process Specifics --- */
+.hiring-process-wrapper {
+  width: 100%;
+}
+
 .hiring-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200');
+  background-image: url('/your-new-banner-image.jpg'); /* Ensure path is correct */
   background-size: cover;
   background-position: center;
   min-height: 250px;
@@ -123,8 +127,23 @@ body {
   justify-content: center;
 }
 
+/* Dark text box styling for banner title */
+.hiring-banner-text-box {
+  background-color: rgba(26, 67, 93, 0.9); 
+  padding: 20px 45px;
+}
+
+.hiring-banner-title {
+  color: white;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 .hiring-banner h1.page-banner {
-  background-color: rgba(26, 67, 93, 0.85); /* Dark blue box for text */
+  background-color: rgba(26, 67, 93, 0.85); 
   color: white;
   padding: 20px 45px;
   font-size: 28px;
@@ -187,6 +206,12 @@ body {
   width: 100%; 
   height: auto; 
   box-shadow: 0 12px 25px rgba(0,0,0,0.12); 
+}
+
+.infographic-container {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
 }
 
 .green-heading { color: #7aba2e !important; text-transform: uppercase; }

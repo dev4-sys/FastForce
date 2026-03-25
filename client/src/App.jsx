@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 
-// Import Components
-import Whyus from './Whyus';
-import Coreservices from './Coreservices';
-import OurHighringProcess from './OurHighringProcess'; // Added Import
+// Import Page Components
+import Whyus from './Whyus.jsx';
+import Coreservices from './Coreservices.jsx';
+import OurHighringProcess from './OurHighringProcess.jsx'; 
+import HealthAndSafety from './HealthAndSafety.jsx'; 
+import GeneralTerms from './GeneralTerms.jsx'; 
 
 // Import Images
 import logo from './fast-force-logo.png'; 
@@ -17,6 +19,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  // Navigation Helper
   const navigateTo = (page) => {
     setCurrentPage(page);
     setIsMenuOpen(false);
@@ -30,14 +33,13 @@ function App() {
 
   return (
     <div className="App">
-      {/* HEADER SECTION */}
+      {/* --- HEADER SECTION --- */}
       <header className="main-header">
         <div className="header-container">
-          <div className="logo" onClick={() => navigateTo('home')} style={{cursor: 'pointer'}}>
-            <img src={logo} alt="FastForce" className="header-logo-img" />
+          <div className="logo" onClick={() => navigateTo('home')} style={{ cursor: 'pointer' }}>
+            <img src={logo} alt="FastForce Logo" className="header-logo-img" />
           </div>
           
-          {/* Mobile Menu Toggle */}
           <button className="mobile-menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <i className={isMenuOpen ? "fas fa-times" : "fas fa-bars"}></i>
           </button>
@@ -51,7 +53,7 @@ function App() {
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
-              <button className={`dropdown-trigger ${['whyus', 'coreservices', 'hiring'].includes(currentPage) ? 'active' : ''}`}>
+              <button className={`dropdown-trigger ${['whyus', 'coreservices', 'hiring', 'health', 'terms'].includes(currentPage) ? 'active' : ''}`}>
                 EMPLOYERS <i className="fas fa-caret-down"></i>
               </button>
               
@@ -59,14 +61,16 @@ function App() {
                 <div className="dropdown-content">
                   <a href="#" onClick={() => navigateTo('whyus')}>Why Us</a>
                   <a href="#" onClick={() => navigateTo('coreservices')}>Core Services</a>
-                  <a href="#" onClick={() => navigateTo('hiring')}>Hiring Process</a> {/* Added 3rd Option */}
+                  <a href="#" onClick={() => navigateTo('hiring')}>Hiring Process</a>
+                  <a href="#" onClick={() => navigateTo('health')}>Health & Safety</a>
+                  <a href="#" onClick={() => navigateTo('terms')}>General Terms</a>
                 </div>
               )}
             </div>
 
             <a href="#">CANDIDATES</a>
             <a href="#">WHO ARE WE</a>
-            <a href="#">HEALTH & SAFETY</a>
+            <a href="#" onClick={() => navigateTo('health')} className={currentPage === 'health' ? 'active' : ''}>HEALTH & SAFETY</a>
             <a href="#">H&S TRAINING</a>
             <a href="#">CONTACT</a>
           </nav>
@@ -74,23 +78,27 @@ function App() {
         <div className="header-blue-bar"></div>
       </header>
 
-      {/* MAIN BODY CONTENT */}
+      {/* --- MAIN CONTENT AREA --- */}
       <main className="site-content">
         {currentPage === 'home' && (
-          <h1 className="hero-title">Connecting Talent with Opportunity</h1>
+          <div className="home-hero-placeholder">
+            <h1 className="hero-title">Connecting Talent with Opportunity</h1>
+          </div>
         )}
+
         {currentPage === 'whyus' && <Whyus />}
         {currentPage === 'coreservices' && <Coreservices />}
-        {currentPage === 'hiring' && <OurHighringProcess />} {/* Added Page Link */}
+        {currentPage === 'hiring' && <OurHighringProcess />} 
+        {currentPage === 'health' && <HealthAndSafety />}
+        {currentPage === 'terms' && <GeneralTerms />}
       </main>
 
-      {/* MAIN FOOTER */}
+      {/* --- MAIN FOOTER --- */}
       <footer className="main-footer">
         <div className="footer-grid">
           <div className="footer-col-1">
-            <img src={logo} alt="Logo" className="footer-logo-large" />
+            <img src={logo} alt="FastForce Footer Logo" className="footer-logo-large" />
             <p className="footer-tagline">Reinventing NZ Workplaces</p>
-            <p className="footer-subtext">Recruitment & Small Business Advisor</p>
             <div className="social-icons-centered">
               <a href="#" className="social-link"><i className="fab fa-twitter"></i></a>
               <a href="#" className="social-link"><i className="fab fa-facebook-f"></i></a>
@@ -99,9 +107,9 @@ function App() {
           </div>
 
           <div className="footer-col-2">
-            <img src={rcsa} className="partner-img" alt="RCSA" />
-            <img src={sitesafe} className="partner-img" alt="SiteSafe" />
-            <img src={adt} className="partner-img" alt="ADT" />
+            <img src={rcsa} className="partner-img" alt="RCSA Member" />
+            <img src={sitesafe} className="partner-img" alt="SiteSafe Member" />
+            <img src={adt} className="partner-img" alt="ADT Logo" />
           </div>
 
           <div className="footer-col">
@@ -110,18 +118,10 @@ function App() {
               <li onClick={() => navigateTo('home')}>Home</li>
               <li onClick={() => navigateTo('coreservices')}>Core Services</li>
               <li onClick={() => navigateTo('whyus')}>Why Us</li>
-              <li onClick={() => navigateTo('hiring')}>Hiring Process</li> {/* Updated Footer Link */}
-              <li>Submit CV</li>
-              <li>Privacy Policy</li>
-              <li>RCSA Certificate</li>
+              <li onClick={() => navigateTo('hiring')}>Hiring Process</li>
+              <li onClick={() => navigateTo('terms')}>General Terms</li>
+              <li onClick={() => navigateTo('health')}>Health & Safety</li>
             </ul>
-            <div className="office-timing">
-              <h3>Office Timing</h3>
-              <p className="timing-label">Monday to Friday</p>
-              <span className="timing-value">8.30AM to 5.00PM.</span>
-              <p className="timing-label">Saturday & Sunday</p>
-              <span className="timing-value">Closed</span>
-            </div>
           </div>
 
           <div className="footer-col contact-col">
@@ -139,7 +139,7 @@ function App() {
         </div>
       </footer>
 
-      {/* SUB-FOOTER */}
+      {/* --- SUB-FOOTER --- */}
       <div className="sub-footer">
         <div className="sub-footer-container">
           <div className="copyright-info">
@@ -147,6 +147,7 @@ function App() {
             <p>Design & Developed by Perfect Designing Solutions</p>
           </div>
           <div className="sub-footer-links">
+            <a href="#" onClick={() => navigateTo('terms')}>General Terms</a>
             <a href="#">Privacy Policy</a>
           </div>
         </div>

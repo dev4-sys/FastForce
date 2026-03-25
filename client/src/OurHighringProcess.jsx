@@ -1,11 +1,20 @@
 import React from 'react';
 
-const HiringProcess = () => {
+const OurHighringProcess = () => {
   return (
     <div className="hiring-process-wrapper">
-      {/* Hero Banner */}
-      <section className="hiring-banner">
-        <h1 className="page-banner">OUR HIRING PROCESS</h1>
+      {/* Hero Banner with Background Image and Dark Box Title */}
+      <section 
+        className="hiring-banner" 
+        style={{ 
+          backgroundImage: "url('/fastforce.co.nz_our-hiring-process_.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <div className="hiring-banner-text-box">
+          <h1 className="hiring-banner-title">OUR HIRING PROCESS</h1>
+        </div>
       </section>
 
       {/* Sub Header / Enquire Bar */}
@@ -20,7 +29,7 @@ const HiringProcess = () => {
           <div className="specialty-image">
             <img 
               src="/tell-us.jpg" 
-              alt="Laptop displaying recruitment site" 
+              alt="Recruitment site" 
             />
           </div>
           <div className="specialty-text">
@@ -41,7 +50,7 @@ const HiringProcess = () => {
           <div className="specialty-image">
             <img 
               src="/review.jpg" 
-              alt="Team reviewing documents" 
+              alt="Team review" 
             />
           </div>
           <div className="specialty-text">
@@ -50,9 +59,7 @@ const HiringProcess = () => {
               We will provide you with a short-list of verified and skilled candidates and our recommendations 
               will be tailored to the nuances of your role and business. References & background checks and 
               Drug testing are conducted for each candidate and the outcome of this is presented to you. 
-              Only well-suited, qualified, and verified candidates are forwarded to the client for consideration. 
-              Then, once you select the best candidate, we will coordinate all aspects of the recruiting process, 
-              working hard to ensure a smooth start for you and your new employee.
+              Only well-suited, qualified, and verified candidates are forwarded to the client for consideration.
             </p>
           </div>
         </section>
@@ -69,7 +76,7 @@ const HiringProcess = () => {
             </p>
           </div>
           
-          {/* Added Infographic Image Below the Text */}
+          {/* Infographic Image */}
           <div className="specialty-image" style={{ width: '100%', marginTop: '30px', textAlign: 'center' }}>
             <img 
               src="/work-process-1024x503.jpg" 
@@ -83,4 +90,4 @@ const HiringProcess = () => {
   );
 };
 
-export default HiringProcess;
+export default OurHighringProcess;
