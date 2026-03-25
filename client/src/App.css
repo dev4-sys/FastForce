@@ -516,3 +516,99 @@ body {
     padding: 20px !important;
   }
 }
+/* ============================================================
+   CORE VALUES PAGE STYLES (image_896c29.png match)
+   ============================================================ */
+
+.values-container {
+  margin-top: 60px !important;
+  padding-bottom: 80px !important;
+}
+
+/* Flex row for the value and the circle */
+.value-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 80px !important;
+  gap: 50px !important;
+}
+
+/* Alternating logic for the row-reverse */
+.value-row.row-reverse {
+  flex-direction: row-reverse !important;
+  text-align: right !important;
+}
+
+.value-text {
+  flex: 1.2 !important;
+}
+
+.value-text h2 {
+  color: #1a435d !important; /* Navy from image_896c29.png */
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  margin-bottom: 15px !important;
+  text-transform: uppercase !important;
+}
+
+.value-text p {
+  color: #666 !important;
+  line-height: 1.8 !important;
+  font-size: 15px !important;
+}
+
+/* The Circle Container */
+.value-visual {
+  flex: 0 0 220px !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.value-circle {
+  width: 160px !important;
+  height: 160px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white !important;
+  /* Soft shadow to match the professional UI in image_896c29.png */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.value-circle:hover {
+  transform: scale(1.05) !important;
+}
+
+.value-circle i {
+  font-size: 32px !important;
+  margin-bottom: 10px !important;
+}
+
+.value-circle span {
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+}
+
+/* Responsive Handling for Core Values */
+@media (max-width: 768px) {
+  .value-row, .value-row.row-reverse {
+    flex-direction: column-reverse !important; /* Visuals on top on mobile */
+    text-align: center !important;
+    gap: 30px !important;
+    margin-bottom: 60px !important;
+  }
+  
+  .value-visual {
+    flex: none !important;
+  }
+
+  .value-text h2 {
+    font-size: 22px !important;
+  }
+}

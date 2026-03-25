@@ -9,6 +9,8 @@ import HealthAndSafety from './HealthAndSafety.jsx';
 import GeneralTerms from './GeneralTerms.jsx'; 
 import TemporaryTerms from './TemporaryTerms.jsx';
 import Register from './Register.jsx';
+import AboutUs from './AboutUs.jsx';
+import CoreValues from './CoreValues.jsx';
 
 // Import Images
 import logo from './fast-force-logo.png'; 
@@ -20,12 +22,13 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false); 
 
-  // Navigation Helper
   const navigateTo = (page) => {
     setCurrentPage(page);
     setIsMenuOpen(false);
     setIsDropdownOpen(false);
+    setIsAboutDropdownOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -55,7 +58,6 @@ function App() {
               HOME
             </a>
             
-            {/* EMPLOYERS DROPDOWN */}
             <div 
               className="nav-item-dropdown"
               onMouseEnter={() => setIsDropdownOpen(true)}
@@ -71,8 +73,8 @@ function App() {
                   <a href="#" onClick={() => navigateTo('coreservices')}>Core Services</a>
                   <a href="#" onClick={() => navigateTo('hiring')}>Hiring Process</a>
                   <a href="#" onClick={() => navigateTo('health')}>Health & Safety</a>
-                  <a href="#" onClick={() => navigateTo('termsPerm')}>GENERAL TERMS OF THE BUSINESS PERMANENT PLACEMENT</a>
-                  <a href="#" onClick={() => navigateTo('termsTemp')}>GENERAL TERMS OF THE BUSINESS TEMPORARY PLACEMENT</a>
+                  <a href="#" onClick={() => navigateTo('termsPerm')}>GENERAL TERMS PERMANENT</a>
+                  <a href="#" onClick={() => navigateTo('termsTemp')}>GENERAL TERMS TEMPORARY</a>
                   <a 
                     href="/Timesheet.pdf" 
                     target="_blank" 
@@ -88,9 +90,26 @@ function App() {
             </div>
 
             <a href="#">CANDIDATES</a>
-            <a href="#">WHO ARE WE</a>
+
+            {/* WHO ARE WE DROPDOWN - ORDER: About -> Values -> Services */}
+            <div 
+              className="nav-item-dropdown"
+              onMouseEnter={() => setIsAboutDropdownOpen(true)}
+              onMouseLeave={() => setIsAboutDropdownOpen(false)}
+            >
+              <button className={`dropdown-trigger ${['about', 'values', 'coreservices'].includes(currentPage) ? 'active' : ''}`}>
+                WHO ARE WE <i className="fas fa-caret-down"></i>
+              </button>
+              
+              {isAboutDropdownOpen && (
+                <div className="dropdown-content">
+                  <a href="#" onClick={() => navigateTo('about')}>About Us</a>
+                  <a href="#" onClick={() => navigateTo('values')}>Core Values</a>
+                  <a href="#" onClick={() => navigateTo('coreservices')}>Core Services</a>
+                </div>
+              )}
+            </div>
             
-            {/* UPDATED HEALTH & SAFETY LINK */}
             <a 
               href="#" 
               onClick={() => navigateTo('health')} 
@@ -121,9 +140,11 @@ function App() {
         {currentPage === 'termsPerm' && <GeneralTerms />}
         {currentPage === 'termsTemp' && <TemporaryTerms />}
         {currentPage === 'register' && <Register />}
+        {currentPage === 'about' && <AboutUs />}
+        {currentPage === 'values' && <CoreValues />} 
       </main>
 
-      {/* --- MAIN FOOTER --- */}
+      {/* --- FOOTER --- */}
       <footer className="main-footer">
         <div className="footer-grid">
           <div className="footer-col-1">
@@ -147,7 +168,8 @@ function App() {
             <ul className="footer-links">
               <li onClick={() => navigateTo('home')}>Home</li>
               <li onClick={() => navigateTo('coreservices')}>Core Services</li>
-              <li onClick={() => navigateTo('whyus')}>Why Us</li>
+              <li onClick={() => navigateTo('about')}>About Us</li> 
+              <li onClick={() => navigateTo('values')}>Core Values</li> 
               <li onClick={() => navigateTo('hiring')}>Hiring Process</li>
               <li onClick={() => navigateTo('health')}>Health & Safety</li>
               <li onClick={() => navigateTo('termsPerm')}>Permanent Terms</li>
@@ -158,20 +180,13 @@ function App() {
 
           <div className="footer-col contact-col">
             <h3>CONTACT</h3>
-            <div className="office-info">
-              <p><strong>Christchurch Office</strong><br/>Phone: 03 3350223</p>
-            </div>
-            <div className="office-info">
-              <p><strong>Ashburton Office</strong><br/>Phone: 02 25282386</p>
-            </div>
-            <div className="office-info">
-              <p><strong>Dunedin Office</strong><br/>Phone: 02 12788917</p>
-            </div>
+            <div className="office-info"><p><strong>Christchurch Office</strong><br/>Phone: 03 3350223</p></div>
+            <div className="office-info"><p><strong>Ashburton Office</strong><br/>Phone: 02 25282386</p></div>
+            <div className="office-info"><p><strong>Dunedin Office</strong><br/>Phone: 02 12788917</p></div>
           </div>
         </div>
       </footer>
 
-      {/* --- SUB-FOOTER --- */}
       <div className="sub-footer">
         <div className="sub-footer-container">
           <div className="copyright-info">
