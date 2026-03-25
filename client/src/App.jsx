@@ -7,6 +7,8 @@ import Coreservices from './Coreservices.jsx';
 import OurHighringProcess from './OurHighringProcess.jsx'; 
 import HealthAndSafety from './HealthAndSafety.jsx'; 
 import GeneralTerms from './GeneralTerms.jsx'; 
+import TemporaryTerms from './TemporaryTerms.jsx';
+import Register from './Register.jsx';
 
 // Import Images
 import logo from './fast-force-logo.png'; 
@@ -45,7 +47,13 @@ function App() {
           </button>
 
           <nav className={`nav-menu ${isMenuOpen ? "nav-active" : ""}`}>
-            <a href="#" onClick={() => navigateTo('home')} className={currentPage === 'home' ? 'active' : ''}>HOME</a>
+            <a 
+              href="#" 
+              onClick={() => navigateTo('home')} 
+              className={currentPage === 'home' ? 'active' : ''}
+            >
+              HOME
+            </a>
             
             {/* EMPLOYERS DROPDOWN */}
             <div 
@@ -53,7 +61,7 @@ function App() {
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
-              <button className={`dropdown-trigger ${['whyus', 'coreservices', 'hiring', 'health', 'terms'].includes(currentPage) ? 'active' : ''}`}>
+              <button className={`dropdown-trigger ${['whyus', 'coreservices', 'hiring', 'health', 'termsPerm', 'termsTemp', 'register'].includes(currentPage) ? 'active' : ''}`}>
                 EMPLOYERS <i className="fas fa-caret-down"></i>
               </button>
               
@@ -63,14 +71,34 @@ function App() {
                   <a href="#" onClick={() => navigateTo('coreservices')}>Core Services</a>
                   <a href="#" onClick={() => navigateTo('hiring')}>Hiring Process</a>
                   <a href="#" onClick={() => navigateTo('health')}>Health & Safety</a>
-                  <a href="#" onClick={() => navigateTo('terms')}>General Terms</a>
+                  <a href="#" onClick={() => navigateTo('termsPerm')}>GENERAL TERMS OF THE BUSINESS PERMANENT PLACEMENT</a>
+                  <a href="#" onClick={() => navigateTo('termsTemp')}>GENERAL TERMS OF THE BUSINESS TEMPORARY PLACEMENT</a>
+                  <a 
+                    href="/Timesheet.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={() => setIsDropdownOpen(false)}
+                    style={{ borderTop: '1px solid #eee', fontWeight: 'bold', color: '#0056b3' }}
+                  >
+                    Timesheet
+                  </a>
+                  <a href="#" onClick={() => navigateTo('register')} style={{ borderTop: '1px solid #eee', color: '#008000', fontWeight: 'bold' }}>Register</a>
                 </div>
               )}
             </div>
 
             <a href="#">CANDIDATES</a>
             <a href="#">WHO ARE WE</a>
-            <a href="#" onClick={() => navigateTo('health')} className={currentPage === 'health' ? 'active' : ''}>HEALTH & SAFETY</a>
+            
+            {/* UPDATED HEALTH & SAFETY LINK */}
+            <a 
+              href="#" 
+              onClick={() => navigateTo('health')} 
+              className={currentPage === 'health' ? 'active' : ''}
+            >
+              HEALTH & SAFETY
+            </a>
+
             <a href="#">H&S TRAINING</a>
             <a href="#">CONTACT</a>
           </nav>
@@ -81,7 +109,7 @@ function App() {
       {/* --- MAIN CONTENT AREA --- */}
       <main className="site-content">
         {currentPage === 'home' && (
-          <div className="home-hero-placeholder">
+          <div className="home-hero-placeholder" style={{ padding: '100px 20px', textAlign: 'center' }}>
             <h1 className="hero-title">Connecting Talent with Opportunity</h1>
           </div>
         )}
@@ -90,7 +118,9 @@ function App() {
         {currentPage === 'coreservices' && <Coreservices />}
         {currentPage === 'hiring' && <OurHighringProcess />} 
         {currentPage === 'health' && <HealthAndSafety />}
-        {currentPage === 'terms' && <GeneralTerms />}
+        {currentPage === 'termsPerm' && <GeneralTerms />}
+        {currentPage === 'termsTemp' && <TemporaryTerms />}
+        {currentPage === 'register' && <Register />}
       </main>
 
       {/* --- MAIN FOOTER --- */}
@@ -119,8 +149,10 @@ function App() {
               <li onClick={() => navigateTo('coreservices')}>Core Services</li>
               <li onClick={() => navigateTo('whyus')}>Why Us</li>
               <li onClick={() => navigateTo('hiring')}>Hiring Process</li>
-              <li onClick={() => navigateTo('terms')}>General Terms</li>
               <li onClick={() => navigateTo('health')}>Health & Safety</li>
+              <li onClick={() => navigateTo('termsPerm')}>Permanent Terms</li>
+              <li onClick={() => navigateTo('termsTemp')}>Temporary Terms</li>
+              <li onClick={() => navigateTo('register')}>Register</li>
             </ul>
           </div>
 
@@ -147,7 +179,8 @@ function App() {
             <p>Design & Developed by Perfect Designing Solutions</p>
           </div>
           <div className="sub-footer-links">
-            <a href="#" onClick={() => navigateTo('terms')}>General Terms</a>
+            <a href="#" onClick={() => navigateTo('termsPerm')}>Terms (Perm)</a>
+            <a href="#" onClick={() => navigateTo('termsTemp')}>Terms (Temp)</a>
             <a href="#">Privacy Policy</a>
           </div>
         </div>

@@ -13,7 +13,7 @@ const GeneralTerms = () => {
         }}
       >
         <div className="hiring-banner-text-box">
-          <h1 className="hiring-banner-title">GENERAL TERMS</h1>
+          <h1 className="hiring-banner-title">GENERAL TERMS OF THE BUSINESS PERMANENT PLACEMENT</h1>
         </div>
       </section>
 
