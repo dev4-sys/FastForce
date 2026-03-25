@@ -4,6 +4,7 @@ import './App.css';
 // Import Components
 import Whyus from './Whyus';
 import Coreservices from './Coreservices';
+import OurHighringProcess from './OurHighringProcess'; // Added Import
 
 // Import Images
 import logo from './fast-force-logo.png'; 
@@ -50,7 +51,7 @@ function App() {
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
-              <button className={`dropdown-trigger ${['whyus', 'coreservices'].includes(currentPage) ? 'active' : ''}`}>
+              <button className={`dropdown-trigger ${['whyus', 'coreservices', 'hiring'].includes(currentPage) ? 'active' : ''}`}>
                 EMPLOYERS <i className="fas fa-caret-down"></i>
               </button>
               
@@ -58,6 +59,7 @@ function App() {
                 <div className="dropdown-content">
                   <a href="#" onClick={() => navigateTo('whyus')}>Why Us</a>
                   <a href="#" onClick={() => navigateTo('coreservices')}>Core Services</a>
+                  <a href="#" onClick={() => navigateTo('hiring')}>Hiring Process</a> {/* Added 3rd Option */}
                 </div>
               )}
             </div>
@@ -79,6 +81,7 @@ function App() {
         )}
         {currentPage === 'whyus' && <Whyus />}
         {currentPage === 'coreservices' && <Coreservices />}
+        {currentPage === 'hiring' && <OurHighringProcess />} {/* Added Page Link */}
       </main>
 
       {/* MAIN FOOTER */}
@@ -107,6 +110,7 @@ function App() {
               <li onClick={() => navigateTo('home')}>Home</li>
               <li onClick={() => navigateTo('coreservices')}>Core Services</li>
               <li onClick={() => navigateTo('whyus')}>Why Us</li>
+              <li onClick={() => navigateTo('hiring')}>Hiring Process</li> {/* Updated Footer Link */}
               <li>Submit CV</li>
               <li>Privacy Policy</li>
               <li>RCSA Certificate</li>

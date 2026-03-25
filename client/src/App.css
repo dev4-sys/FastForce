@@ -112,7 +112,7 @@ body {
   width: 100%; 
 }
 
-/* --- Shared Page Layouts --- */
+/* --- Shared Page Layouts & Hiring Process Specifics --- */
 .page-banner { 
   background-color: #1a435d; 
   color: white; 
@@ -120,46 +120,6 @@ body {
   text-align: center; 
 }
 
-.specialties-section {
-  padding: 60px 0;
-  background-color: #fff;
-}
-
-.specialty-row {
-  display: flex;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto 80px auto;
-  gap: 50px;
-  padding: 0 20px;
-}
-
-.specialty-row.reverse { flex-direction: row-reverse; }
-
-.specialty-text { flex: 1; }
-.specialty-text h2 { color: #1a435d; font-size: 22px; font-weight: 800; margin-bottom: 15px; }
-.specialty-text p { color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 25px; }
-
-.specialty-image { flex: 1; }
-.specialty-image img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-
-.learn-more-btn {
-  background-color: #1a435d;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-transform: uppercase;
-}
-
-.learn-more-btn:hover { background-color: #7aba2e; }
-
-/* --- Hiring Process Specifics --- */
 .hiring-banner {
   background: linear-gradient(rgba(26, 67, 93, 0.7), rgba(26, 67, 93, 0.7)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200');
   background-size: cover;
@@ -192,6 +152,29 @@ body {
   font-size: 12px;
 }
 
+.specialties-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.specialty-row {
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 80px auto;
+  gap: 50px;
+  padding: 0 20px;
+}
+
+.specialty-row.reverse { flex-direction: row-reverse; }
+
+.specialty-text { flex: 1; }
+.specialty-text h2 { color: #1a435d; font-size: 22px; font-weight: 800; margin-bottom: 15px; }
+.specialty-text p { color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 25px; }
+
+.specialty-image { flex: 1; }
+.specialty-image img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
 .green-heading { color: #7aba2e !important; text-transform: uppercase; }
 .navy-heading { color: #1a435d; text-align: center; margin-bottom: 10px; font-weight: 800; }
 
@@ -200,6 +183,22 @@ body {
   padding: 60px 0;
   margin: 40px 0;
 }
+
+.learn-more-btn {
+  background-color: #1a435d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.learn-more-btn:hover { background-color: #7aba2e; }
 
 /* --- Why Us Compact Table --- */
 .container-narrow { max-width: 900px; margin: 40px auto; text-align: center; padding: 0 20px; }
@@ -367,4 +366,3 @@ body {
   .sub-footer-container { flex-direction: column; text-align: center; gap: 15px; }
   .scroll-top-btn { right: 20px; width: 40px; height: 40px; }
 }
-
