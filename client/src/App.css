@@ -988,3 +988,89 @@ body {
     margin: 0 auto 15px;
   }
 }
+/* --- Banner Styles (Matching Image 8ba225) --- */
+.page-banner {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.page-banner h1 {
+  color: #ffffff;
+  font-size: 52px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+/* --- Intro Text --- */
+.intro-section {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
+
+.intro-section h2 {
+  color: #1a435d; /* Brand Navy */
+  font-size: 28px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.intro-section p {
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- Table Styling (Matching Image 8b9ac2 style) --- */
+.small-table-wrapper {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+  overflow-x: auto;
+}
+
+.benefits-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.benefits-table th {
+  background-color: #1a435d;
+  color: #ffffff;
+  padding: 15px;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.benefits-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+  line-height: 1.5;
+}
+
+.feat-cell {
+  color: #1a435d;
+  font-weight: 700;
+  background-color: #f9f9f9;
+  width: 25%;
+}
+
+/* Alternate row color for readability */
+.benefits-table tbody tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+.benefits-table tbody tr:hover {
+  background-color: #f1f4f6;
+}

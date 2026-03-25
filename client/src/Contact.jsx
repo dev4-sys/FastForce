@@ -38,14 +38,6 @@ const Contact = () => {
               <button type="submit" className="contact-submit-btn">SEND MESSAGE</button>
             </form>
           </div>
-
-          {/* Right Side: Triangle Visual */}
-          <div className="contact-visual">
-            <div className="triangle-graphic">
-              <div className="blue-part"></div>
-              <div className="green-part"></div>
-            </div>
-          </div>
         </div>
       </div>
 

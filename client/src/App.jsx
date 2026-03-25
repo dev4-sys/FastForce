@@ -204,12 +204,9 @@ function App() {
       <div className="sub-footer">
         <div className="sub-footer-container">
           <div className="copyright-info">
-            <p>© Copyright 2026 www.fastforce.co.nz</p>
-            <p>Design & Developed by Perfect Designing Solutions</p>
+            <p>© Copyright 2026 www.fastforce.co.nz Design & Developed by Perfect Designing Solutions</p>
           </div>
           <div className="sub-footer-links">
-            <a href="#" onClick={() => navigateTo('termsPerm')}>Terms (Perm)</a>
-            <a href="#" onClick={() => navigateTo('termsTemp')}>Terms (Temp)</a>
             <a href="#">Privacy Policy</a>
           </div>
         </div>

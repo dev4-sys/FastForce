@@ -7,7 +7,7 @@ const GeneralTerms = () => {
       <section 
         className="hiring-banner" 
         style={{ 
-          backgroundImage: "url('/fastforce.co.nz_our-hiring-process_.jpg')", 
+          backgroundImage: "url('/permnent.jpg')", 
           backgroundSize: 'cover', 
           backgroundPosition: 'center' 
         }}

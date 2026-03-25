@@ -1,6 +1,9 @@
 import React from 'react';
 
 const Coreservices = () => {
+  // Replace with your actual banner image path
+  const bannerBg = "/path-to-your-banner-image.jpg"; 
+
   const specialties = [
     {
       title: "OUR SPECIALITY IN TRADES/CONSTRUCTION",
@@ -36,23 +39,40 @@ const Coreservices = () => {
 
   return (
     <div className="services-page">
-      <section className="page-banner">
-        <h1>Core Services</h1>
+      {/* Banner with Background Image ONLY (No Blue Overlay) */}
+      <section 
+        className="page-banner"
+        style={{ 
+          backgroundImage: `url(${bannerBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          height: '300px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
+        <div className="banner-content">
+          {/* Text color changed to Navy for visibility on light images */}
+          <h1 style={{ color: '#1a435d', margin: 0 }}>CORE SERVICES</h1>
+        </div>
       </section>
 
       <section className="specialties-section">
-        {specialties.map((item, index) => (
-          <div className={`specialty-row ${item.align === 'left' ? 'reverse' : ''}`} key={index}>
-            <div className="specialty-text">
-              <h2>{item.title}</h2>
-              <p>{item.desc}</p>
-              <button className="learn-more-btn">Learn More</button>
+        <div className="container">
+          {specialties.map((item, index) => (
+            <div className={`specialty-row ${item.align === 'left' ? 'reverse' : ''}`} key={index}>
+              <div className="specialty-text">
+                <h2>{item.title}</h2>
+                <p>{item.desc}</p>
+                <button className="learn-more-btn">LEARN MORE</button>
+              </div>
+              <div className="specialty-image">
+                <img src={item.img} alt={item.title} />
+              </div>
             </div>
-            <div className="specialty-image">
-              <img src={item.img} alt={item.title} />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
     </div>
   );

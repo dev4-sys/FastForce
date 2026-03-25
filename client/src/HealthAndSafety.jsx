@@ -7,7 +7,7 @@ const HealthAndSafety = () => {
       <section 
         className="hiring-banner" 
         style={{ 
-          backgroundImage: "url('/fastforce.co.nz_health-and-safety_.jpg')",
+          backgroundImage: "url('/whyus.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}

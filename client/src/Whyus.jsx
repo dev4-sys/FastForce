@@ -1,6 +1,8 @@
 import React from 'react';
 
 const Whyus = () => {
+  // Use your preferred background image URL here
+  const bannerImg = "";
   const tableData = [
     { f: "Accredited Employer", w: "Gives you access to the international candidate market", b: "Best possible return on your investment in staffing" },
     { f: "In-house Drug testing", w: "Access to the drug free candidate pool", b: "Health and Safety compliant candidates" },
@@ -22,43 +24,51 @@ const Whyus = () => {
 
   return (
     <div className="why-us-page">
-      <section className="page-banner">
-        <div className="banner-content">
-          <h1>WHY US</h1>
-        </div>
-      </section>
+      {/* Background image applied via inline style for the 'Contact Us' look */}
+      <section 
+        className="page-banner"
+        style={{
+        backgroundImage: `url(${bannerImg})`, // Removed the linear-gradient color
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '300px', // Adjust height as needed
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+   }}
+>
+  <div className="banner-content">
+    <h1 style={{ color: '#1a435d' }}>WHY US</h1> {/* Changed text color to Navy so it's visible on white/clear backgrounds */}
+  </div>
+</section>
 
       <section className="intro-section">
         <div className="container-narrow">
           <h2>Service Features & Benefits</h2>
-          <p className="intro-text">
-            At Fast Force, there are various service features and benefits designed to assist our clients easing the challenges of hiring. 
-          </p>
+          <p>At Fast Force, there are various service features and benefits designed to assist our clients easing the challenges of hiring.</p>
         </div>
       </section>
 
-      <section className="table-section">
-        <div className="small-table-wrapper">
-          <table className="benefits-table compact">
-            <thead>
-              <tr>
-                <th>Features</th>
-                <th>What do you get?</th>
-                <th>Client Benefits</th>
+      <div className="small-table-wrapper">
+        <table className="benefits-table">
+          <thead>
+            <tr>
+              <th>Features</th>
+              <th>What do you get?</th>
+              <th>Client Benefits</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tableData.map((row, index) => (
+              <tr key={index}>
+                <td className="feat-cell">{row.f}</td>
+                <td>{row.w}</td>
+                <td>{row.b}</td>
               </tr>
-            </thead>
-            <tbody>
-              {tableData.map((row, index) => (
-                <tr key={index}>
-                  <td className="feat-cell">{row.f}</td>
-                  <td>{row.w}</td>
-                  <td>{row.b}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
