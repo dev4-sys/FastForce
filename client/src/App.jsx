@@ -12,7 +12,7 @@ import Register from './Register.jsx';
 import AboutUs from './AboutUs.jsx';
 import CoreValues from './CoreValues.jsx';
 import CorporateProfile from './CorporateProfile.jsx';
-import Contact from './Contact.jsx'; // 1. Added Contact Import
+import Contact from './Contact.jsx'; 
 
 // Import Images
 import logo from './fast-force-logo.png'; 
@@ -25,12 +25,16 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false); 
+  const [isCandidateDropdownOpen, setIsCandidateDropdownOpen] = useState(false); 
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false); // State for Nested Menu
 
   const navigateTo = (page) => {
     setCurrentPage(page);
     setIsMenuOpen(false);
     setIsDropdownOpen(false);
     setIsAboutDropdownOpen(false);
+    setIsCandidateDropdownOpen(false);
+    setIsResourcesOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -91,7 +95,47 @@ function App() {
               )}
             </div>
 
-            <a href="#">CANDIDATES</a>
+            {/* CANDIDATE DROPDOWN WITH NESTED RESOURCES */}
+            <div 
+              className="nav-item-dropdown"
+              onMouseEnter={() => setIsCandidateDropdownOpen(true)}
+              onMouseLeave={() => setIsCandidateDropdownOpen(false)}
+            >
+              <button className={`dropdown-trigger ${currentPage === 'health' ? 'active' : ''}`}>
+                CANDIDATES <i className="fas fa-caret-down"></i>
+              </button>
+              {isCandidateDropdownOpen && (
+                <div className="dropdown-content">
+                  <a href="https://fastforce.zohorecruit.com/jobs/Website-Home-Page" target="_blank" rel="noopener noreferrer">Current Job Opening</a>
+                  <a href="https://fastforce.zohorecruit.com/recruit/Portal.na?digest=esLZ8qbN0AgP2ZIQlZSQDqvrECiteI14BzRqiNfM7q8-&iframe=false&mode=register&embedsource=CareerSite" target="_blank" rel="noopener noreferrer" style={{ borderTop: '1px solid #eee' }}>Submit CV</a>
+                  <a href="https://forms.zohopublic.com/fastforcelimited/form/ApplicationForm/formperma/EDjNdFu0fCAVS_AbK7hhdwYAUshwtLVepiAOYoGLqwg" target="_blank" rel="noopener noreferrer" style={{ borderTop: '1px solid #eee' }}>Candidate Advance Registration</a>
+                  <a href="#" onClick={() => navigateTo('health')} style={{ borderTop: '1px solid #eee' }}>Health & Safety</a>
+
+                  {/* NESTED RESOURCES */}
+                  <div 
+                    className="nested-dropdown-wrapper"
+                    onMouseEnter={() => setIsResourcesOpen(true)}
+                    onMouseLeave={() => setIsResourcesOpen(false)}
+                    style={{ borderTop: '1px solid #eee', position: 'relative' }}
+                  >
+                    <a href="#" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      RESOURCES <i className="fas fa-caret-right" style={{fontSize: '10px'}}></i>
+                    </a>
+                    {isResourcesOpen && (
+                      <div className="side-dropdown-content">
+                        <a href="#">CHANGE OF BANK ACCOUNT</a>
+                        <a href="#">CV TIPS</a>
+                        <a href="#">INTERVIEW TIPS</a>
+                        <a href="#">LEAVE REQUEST FORM</a>
+                        <a href="#">TIME SHEET</a>
+                      </div>
+                    )}
+                  </div>
+
+                  <a href="#" style={{ borderTop: '1px solid #eee' }}>REFER A FRIEND!</a>
+                </div>
+              )}
+            </div>
 
             <div 
               className="nav-item-dropdown"
@@ -112,24 +156,9 @@ function App() {
               )}
             </div>
             
-            <a 
-              href="#" 
-              onClick={() => navigateTo('health')} 
-              className={currentPage === 'health' ? 'active' : ''}
-            >
-              HEALTH & SAFETY
-            </a>
-
+            <a href="#" onClick={() => navigateTo('health')} className={currentPage === 'health' ? 'active' : ''}>HEALTH & SAFETY</a>
             <a href="#">H&S TRAINING</a>
-            
-            {/* 2. Linked Contact Nav Item */}
-            <a 
-              href="#" 
-              onClick={() => navigateTo('contact')}
-              className={currentPage === 'contact' ? 'active' : ''}
-            >
-              CONTACT
-            </a>
+            <a href="#" onClick={() => navigateTo('contact')} className={currentPage === 'contact' ? 'active' : ''}>CONTACT</a>
           </nav>
         </div>
         <div className="header-blue-bar"></div>
@@ -153,10 +182,10 @@ function App() {
         {currentPage === 'about' && <AboutUs />}
         {currentPage === 'values' && <CoreValues />} 
         {currentPage === 'corporate' && <CorporateProfile />}
-        {currentPage === 'contact' && <Contact />} {/* 3. Added Render Logic */}
+        {currentPage === 'contact' && <Contact />}
       </main>
 
-      {/* --- FOOTER --- */}
+      {/* --- FOOTER SECTION --- */}
       <footer className="main-footer">
         <div className="footer-grid">
           <div className="footer-col-1">
